@@ -1,9 +1,14 @@
-function App() {
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login/Login";
 
-  return (
-    <>
-    </>
-  )
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route exact path={"/login"} element={<Login/>}/>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-export default App
+export default App;
