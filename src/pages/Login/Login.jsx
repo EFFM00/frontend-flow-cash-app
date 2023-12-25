@@ -1,6 +1,6 @@
 const Login = () => {
     return(
-        
+        <p>HOLA</p>
     );
 }
 
