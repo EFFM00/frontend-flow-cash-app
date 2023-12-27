@@ -1,13 +1,5 @@
 import { styled } from "styled-components";
 
-export const LoginForm = styled.form`
-    /* background-color: red; */
-    width: 50%;
-    padding: 1rem;
-    backdrop-filter: blur(5px);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-`
-
 export const PageForm = styled.div`
     height: 100vh;
     width: 100vw;
@@ -24,5 +16,26 @@ export const FormContainer = styled.div`
     height: 100vh;
     padding: 2rem;
     position: relative;
-    
+`
+
+export const LoginForm = styled.form`
+    width: 80%;
+    padding: 2.5rem;
+    backdrop-filter: blur(3px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: width 0.12s ease;
+    min-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        max-width: 35rem;
+        width: 50%;
+    }
+`
+export const FieldGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 `

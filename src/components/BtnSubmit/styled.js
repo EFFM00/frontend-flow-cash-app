@@ -2,15 +2,20 @@ import { styled } from "styled-components";
 
 export const Btn = styled.button`
     font-weight: 500;
-    color: ${props => props.colorText ?? "black"};
-    width: 15rem;
-    background-color: ${props => props.colorBack};
+    color: ${props => props.$colortext ?? "black"};
+    align-self: ${props => props.$ubication};
+    width: 100%;
+    background-color: ${props => props.$colorback};
     padding: 0.6rem;
     border-radius: 5px;
     border: none;
     transition: background-color 0.12s ease, color 0.12s ease;
     font-size: 1rem;
     font-weight: 600;
+
+    @media (min-width: 600px) {
+        width: 15rem;
+    }
 
     &:hover {
         background-color: #a6aec1;

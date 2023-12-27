@@ -4,7 +4,7 @@ import FieldGeneric from "../../components/FieldGeneric/FieldGeneric";
 import axios from "axios";
 import SpanError from "../../components/SpanError/SpanError";
 import BtnSubmit from "../../components/BtnSubmit/BtnSubmit";
-import { FormContainer, LoginForm, PageForm } from "./styled";
+import { FieldGroup, FormContainer, LoginForm, PageForm } from "./styled";
 
 const Login = () => {
 
@@ -47,7 +47,7 @@ const Login = () => {
         <PageForm>
             <FormContainer>
                 <LoginForm>
-                    <div>
+                    <FieldGroup>
                         <FieldGeneric 
                         title="Email" 
                         type="email" 
@@ -61,9 +61,9 @@ const Login = () => {
                                 <SpanError text={"formik.errors.email"}/>
                             )
                         }
-                    </div>
+                    </FieldGroup>
 
-                    <div>
+                    <FieldGroup>
                         <FieldGeneric 
                         title="Contraseña" 
                         type="password"
@@ -77,9 +77,9 @@ const Login = () => {
                                 <SpanError text={"formik.errors.password"}/>
                             )
                         }
-                    </div>
+                    </FieldGroup>
 
-                    <BtnSubmit type="submit" text="Example" onClick={() => {}} color="#59d999" colorText={"black"}/>
+                    <BtnSubmit type="submit" text="Iniciar sesión" onClick={() => {}} color="#59d999" colorText={"black"} ubication="center"/>
                 </LoginForm>
             </FormContainer>
         </PageForm>
