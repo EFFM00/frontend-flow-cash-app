@@ -15,19 +15,17 @@ export const FormContainer = styled.div`
     width: 100vw;
     height: 100vh;
     padding: 2rem;
-    position: relative;
 `
 
 export const LoginForm = styled.form`
     width: 80%;
     padding: 2.5rem;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(3.5px);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: width 0.12s ease;
     min-width: 15rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
 
     @media (min-width: 768px) {
         max-width: 35rem;

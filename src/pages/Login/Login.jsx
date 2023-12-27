@@ -5,6 +5,7 @@ import axios from "axios";
 import SpanError from "../../components/SpanError/SpanError";
 import BtnSubmit from "../../components/BtnSubmit/BtnSubmit";
 import { FieldGroup, FormContainer, LoginForm, PageForm } from "./styled";
+import TitleSection from "../../components/TitleSection/TitleSection";
 
 const Login = () => {
 
@@ -47,6 +48,7 @@ const Login = () => {
         <PageForm>
             <FormContainer>
                 <LoginForm>
+                    <TitleSection ubication={"center"} text={"Login"}/>
                     <FieldGroup>
                         <FieldGeneric 
                         title="Email" 
@@ -58,7 +60,7 @@ const Login = () => {
                         placeholder="Email"/>
                         {
                             formik.touched.email && formik.errors.email && (
-                                <SpanError text={"formik.errors.email"}/>
+                                <SpanError text={formik.errors.email}/>
                             )
                         }
                     </FieldGroup>
@@ -74,7 +76,7 @@ const Login = () => {
                         placeholder="Contraseña"/>
                         {
                             formik.touched.password && formik.errors.password && (
-                                <SpanError text={"formik.errors.password"}/>
+                                <SpanError text={formik.errors.password}/>
                             )
                         }
                     </FieldGroup>
