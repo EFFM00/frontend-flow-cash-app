@@ -14,10 +14,10 @@ const Register = () => {
         initialValues: {
             first_name: "",
             last_name: "",
+            phone: "",
+            document_id: "",
             email: "",
             password: "",
-            number: "",
-            document_id: ""
         },
         validationSchema: Yup.object({
 
@@ -34,7 +34,7 @@ const Register = () => {
             .max(50)
             .required("La contraseña es requerida"),
 
-            number: Yup.string().required("Es requerido un celular"),
+            phone: Yup.string().required("Es requerido un celular"),
 
             document_id: Yup.string().required("Es requerido el número de documento"),
         }),
@@ -98,6 +98,38 @@ const Register = () => {
 
                     <FieldGroup>
                         <FieldGeneric 
+                        title="Teléfono" 
+                        type="text" 
+                        name="phone" 
+                        id="phone" 
+                        onChange={formik.handleChange} 
+                        onBlur={formik.handleBlur} 
+                        placeholder="Teléfono"/>
+                        {
+                            formik.touched.phone && formik.errors.phone && (
+                                <SpanError text={formik.errors.phone}/>
+                            )
+                        }
+                    </FieldGroup>
+
+                    <FieldGroup>
+                        <FieldGeneric 
+                        title="Documento" 
+                        type="document_id" 
+                        name="document_id" 
+                        id="document_id" 
+                        onChange={formik.handleChange} 
+                        onBlur={formik.handleBlur} 
+                        placeholder="Documento"/>
+                        {
+                            formik.touched.document_id && formik.errors.document_id && (
+                                <SpanError text={formik.errors.document_id}/>
+                            )
+                        }
+                    </FieldGroup>
+
+                    <FieldGroup>
+                        <FieldGeneric 
                         title="Email" 
                         type="email" 
                         name="email" 
@@ -128,9 +160,9 @@ const Register = () => {
                         }
                     </FieldGroup>
 
-                    <LinkText text="¿No tienes cuenta? Créala acá" path="/register" ubication="left"/>
+                    <LinkText text="¿Ya tienes cuenta? Inicia sesión" path="/login" ubication="left"/>
 
-                    <BtnSubmit type="submit" text="Iniciar sesión" onClick={() => {}} color="#59d999" colorText={"black"} ubication="center"/>
+                    <BtnSubmit type="submit" text="Crear cuenta" onClick={() => {}} color="#59d999" colorText={"black"} ubication="center"/>
                 </LoginForm>
             </FormContainer>
         </PageForm>
