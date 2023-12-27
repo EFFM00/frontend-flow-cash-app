@@ -4,9 +4,9 @@ import FieldGeneric from "../../components/FieldGeneric/FieldGeneric";
 import axios from "axios";
 import SpanError from "../../components/SpanError/SpanError";
 import BtnSubmit from "../../components/BtnSubmit/BtnSubmit";
-import { FieldGroup, FormContainer, LoginForm, PageForm } from "./styled";
 import TitleSection from "../../components/TitleSection/TitleSection";
 import LinkText from "../../components/LinkText/LinkText";
+import { FieldGroup, FormContainer, LoginForm, PageForm } from "../Login/styled";
 
 const Register = () => {
 
