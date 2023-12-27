@@ -8,21 +8,35 @@ import { FieldGroup, FormContainer, LoginForm, PageForm } from "./styled";
 import TitleSection from "../../components/TitleSection/TitleSection";
 import LinkText from "../../components/LinkText/LinkText";
 
-const Login = () => {
+const Register = () => {
 
     const formik = useFormik({
         initialValues: {
+            first_name: "",
+            last_name: "",
             email: "",
             password: "",
+            number: "",
+            document_id: ""
         },
         validationSchema: Yup.object({
+
+            first_name: Yup.string().required("Nombre es requerido"),
+
+            last_name: Yup.string().required("Apellido es requerido"),
+
             email: Yup.string()
             .email("Email inválido")
             .required("El email es requerido"),
+
             password: Yup.string()
             .min(12, "La contraseña debe tener a partir de 12 caracteres")
             .max(50)
-            .required("La contraseña es requerida")
+            .required("La contraseña es requerida"),
+
+            number: Yup.string().required("Es requerido un celular"),
+
+            document_id: Yup.string().required("Es requerido el número de documento"),
         }),
         onSubmit: async (values) => {
             const url = "#";
@@ -49,7 +63,39 @@ const Login = () => {
         <PageForm>
             <FormContainer>
                 <LoginForm>
-                    <TitleSection ubication={"center"} text={"Login"}/>
+                    <TitleSection ubication={"center"} text={"Registro"}/>
+                    <FieldGroup>
+                        <FieldGeneric 
+                        title="Nombre" 
+                        type="text" 
+                        name="first_name" 
+                        id="first_name" 
+                        onChange={formik.handleChange} 
+                        onBlur={formik.handleBlur} 
+                        placeholder="Nombre"/>
+                        {
+                            formik.touched.first_name && formik.errors.first_name && (
+                                <SpanError text={formik.errors.first_name}/>
+                            )
+                        }
+                    </FieldGroup>
+
+                    <FieldGroup>
+                        <FieldGeneric 
+                        title="Apellido" 
+                        type="text" 
+                        name="last_name" 
+                        id="last_name" 
+                        onChange={formik.handleChange} 
+                        onBlur={formik.handleBlur} 
+                        placeholder="Apellido"/>
+                        {
+                            formik.touched.last_name && formik.errors.last_name && (
+                                <SpanError text={formik.errors.last_name}/>
+                            )
+                        }
+                    </FieldGroup>
+
                     <FieldGroup>
                         <FieldGeneric 
                         title="Email" 
@@ -91,4 +137,4 @@ const Login = () => {
     );
 }
 
-export default Login
+export default Register
