@@ -13,7 +13,7 @@ export const Btn = styled.button`
     font-size: 1rem;
     font-weight: 600;
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
         width: 15rem;
     }
 

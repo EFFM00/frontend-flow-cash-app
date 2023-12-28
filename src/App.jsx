@@ -2,14 +2,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import LateralMenu from "./components/LateralMenu/LateralMenu";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Header from "./components/Header/Header";
 
 const App = () => {
     return (
         <BrowserRouter>
+            <div>
+                <Header/>
+            </div>
+
             <Routes>
                 <Route exact path={"/login"} element={<Login/>}/>
                 <Route exact path={"/register"} element={<Register/>}/>
-                <Route exact path={"/dashboard"} element={<LateralMenu/>}/>
+                <Route exact path={"/dashboard"} element={<Dashboard/>}/>
             </Routes>
         </BrowserRouter>
     );

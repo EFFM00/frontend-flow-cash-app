@@ -1,24 +1,19 @@
-import { useState } from "react";
-import { MenuContainer } from "./styled";
+import { useEffect, useState } from "react";
+import { ImgIcon, MenuContainer, NavBar, NavContainer } from "./styled";
 import MenuIcon from "../../assets/bars-solid.svg"
+import useScreenSize from "../../hooks/useScreenSize";
 
 const LateralMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    return (
-        <MenuContainer>
-            {
-                isOpen && (
-                    <p>AHHH</p>
-                )
-            }
-            <div>
+    const {width} = useScreenSize();
 
-            </div>
-            <div>
-                <img src={MenuIcon} onClick={() => setIsOpen(!isOpen)}/>
-            </div>
-        </MenuContainer>
+    useEffect(() => {
+        width >= 768 && setIsOpen(true)
+    }, [width])
+
+    return (
+        <MenuContainer $isopen={isOpen}></MenuContainer>
     )
 }
 

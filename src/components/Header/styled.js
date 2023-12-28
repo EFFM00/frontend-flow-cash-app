@@ -36,7 +36,6 @@ export const ImgIcon = styled.img`
 `
 
 export const NavContainer = styled.div`
-    position: fixed;
+    position: sticky;
     top: 0;
-
 `
