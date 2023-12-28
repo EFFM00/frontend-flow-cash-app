@@ -14,11 +14,11 @@ const LateralMenu = () => {
 
     return (
         <NavContainer>
-            <MenuContainer $isopen={isOpen}></MenuContainer>
 
             <NavBar>
-                <ImgIcon src={MenuIcon} isopen={isOpen} closeModal={() => setIsOpen(false)}/>
+                <ImgIcon src={MenuIcon} isopen={isOpen} onClick={() => setIsOpen(!isOpen)}/>
             </NavBar>
+            <MenuContainer $isopen={isOpen}></MenuContainer>
         </NavContainer>
     )
 }

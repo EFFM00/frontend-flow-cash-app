@@ -10,10 +10,10 @@ export const MenuContainer = styled.div`
     transition: transform 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     overflow: scroll;
-
+/* 
     @media (min-width: 768px) {
         position: inherit;
-    }
+    } */
 `
 
 export const NavBar = styled.nav`
