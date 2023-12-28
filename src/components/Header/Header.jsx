@@ -3,7 +3,7 @@ import { ImgIcon, NavBar } from "./styled";
 import MenuIcon from "../../assets/bars-solid.svg"
 import useScreenSize from "../../hooks/useScreenSize";
 import { useModal } from "../../hooks/useModal";
-import BurgerMenu from "../BurgerMenu/BurgerMenu";
+// import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 const Header = () => {
     const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -26,7 +26,7 @@ const Header = () => {
     return (
         <NavBar>
             <ImgIcon src={MenuIcon} isOpen={isOpenModal} closeMenu={closeModal}/>
-            <BurgerMenu isOpen={isOpenModal} closeMenu={closeModal} />
+            {/* <BurgerMenu isOpen={isOpenModal} closeMenu={closeModal} /> */}
         </NavBar>
     )
 }
