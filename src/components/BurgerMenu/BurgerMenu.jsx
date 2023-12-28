@@ -1,6 +1,5 @@
 import LateralMenu from "../LateralMenu/LateralMenu";
 import Menu from "../Menu/Menu";
-import ModalMenu from "../Modal/ModalMenu";
 
 const BurgerMenu = ({ isOpen, closeMenu }) => {
     const handleCloseModal = () => {
@@ -9,7 +8,7 @@ const BurgerMenu = ({ isOpen, closeMenu }) => {
 
     return (
     <LateralMenu isOpen={isOpen} closeModal={closeMenu}>
-        <Menu handleCloseModal={handleCloseModal} />
+        aaa
     </LateralMenu>
     );
 };
