@@ -18,6 +18,7 @@ const LateralMenu = () => {
             <NavBar>
                 <ImgIcon src={MenuIcon} onClick={() => setIsOpen(!isOpen)}/>
             </NavBar>
+
             <MenuContainer $isopen={isOpen}></MenuContainer>
         </NavContainer>
     )
