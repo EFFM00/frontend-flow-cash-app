@@ -1,3 +1,6 @@
+import MenuIcon from "../../assets/bars-solid.svg"
+import { ImgIcon, NavBar } from "./styled";
+
 const Header = () => {
     return (
         <NavBar>

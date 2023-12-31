@@ -16,25 +16,6 @@ export const MenuContainer = styled.div`
     } */
 `
 
-export const NavBar = styled.nav`
-    height: 2.4rem;
-    cursor: pointer;
-    width: 100vw;
-    background-color: #8B8B8B;
-    display: flex;
-    align-items: center;
-    padding: 0.8rem;
-    justify-content: end;
-`
-
-export const ImgIcon = styled.img`
-    display: block;
-    width: 1.3rem;
-    @media (min-width: 768px) {
-        display: none;
-    }
-`
-
 export const NavContainer = styled.div`
     position: fixed;
     top: 0;

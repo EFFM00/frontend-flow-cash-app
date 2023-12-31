@@ -13,36 +13,32 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <h1>HOLA 1</h1>
-            }
-          />
-          <Route
-            path="/login"
-            element={
+          <Route path="/" element={<h1>HOLA 1</h1>}/>
+          <Route path="/login" element={
               <AuthLayout authentication={false}>
                 <Login />
               </AuthLayout>
             }
           />
-          <Route
-            path="/register"
+
+          <Route path="/register"
             element={
               <AuthLayout authentication={false}>
                 <Register />
               </AuthLayout>
             }
           />
-          <Route
-            path="/dashboard"
+
+          <Route path="/dashboard/*"
             element={
               <AuthLayout authentication={true}>
                 <Dashboard />
               </AuthLayout>
             }
-          />
+          >
+            <Route index element={<>HOLAAAAAAAA index</>} />
+          </Route>
+
         </Routes>
       </BrowserRouter>
     </Provider>
