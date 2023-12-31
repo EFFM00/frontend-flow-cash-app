@@ -6,15 +6,16 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 
 const App = () => {
     return (
-        <BrowserRouter>
-        <LateralMenu/>
-            <Routes>
-                <Route exact path={"/login"} element={<Login/>}/>
-                <Route exact path={"/register"} element={<Register/>}/>
-                <Route path={"/dashboard/*"} element={<Dashboard/>}/>
+        <h1>HOLA</h1>
+        // <BrowserRouter>
+        //     <LateralMenu/>
 
-            </Routes>
-        </BrowserRouter>
+        //     <Routes>
+        //         <Route exact path={"/login"} element={<Login/>}/>
+        //         <Route exact path={"/register"} element={<Register/>}/>
+        //         <Route path={"/dashboard/*"} element={<Dashboard/>}/>
+        //     </Routes>
+        // </BrowserRouter>
     );
 }
 
