@@ -3,12 +3,13 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import LateralMenu from "./components/LateralMenu/LateralMenu";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import HeaderDashboard from "./components/Header/Header"
 import { DashboardWrapperCont } from "./App";
 
 function DashboardWrapper() {
     return (
         <DashboardWrapperCont>
-            <p style={{ display: 'inline', backgroundColor: 'red' }}>HOLA p</p>
+            <HeaderDashboard/>
             <Outlet />
         </DashboardWrapperCont>
         );
