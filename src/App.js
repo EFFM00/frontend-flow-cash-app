@@ -5,7 +5,7 @@ export const DashboardWrapperCont = styled.div`
     grid-template-columns: 1fr;
 
     @media (min-width: 768px) {
-        grid-template-columns: 16.5rem 1fr;
+        grid-template-columns: 20rem 1fr;
     }
 `
 

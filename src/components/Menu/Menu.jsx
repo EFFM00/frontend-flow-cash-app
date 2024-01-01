@@ -1,41 +1,48 @@
-import LinkMenu from "../LinkMenu/LinkMenu";
+import { H2Menu, ImgIcon, LinkNested, LinkTitle, MenuStyle, SectionMenu } from "./styled";
 
+import ChartIcon from "../../assets/chart-line-solid.svg";
+import HandIcon from "../../assets/hand-holding-dollar-solid.svg";
+import BillIcon from "../../assets/file-invoice-dollar-solid.svg";
+import BankIcon from "../../assets/building-columns-solid.svg";
+import UserIcon from "../../assets/user-solid.svg";
+import FileIcon from "../../assets/file-lines-regular.svg";
+import SettingIcon from "../../assets/gear-solid.svg";
 const MenuContent = () => {
     return (
-        <aside>
-            <LinkMenu path="/dashboard" text="Movimientos"/>
+        <MenuStyle>
+            <LinkTitle to="/dashboard"><ImgIcon src={ChartIcon}/> Movimientos</LinkTitle>
 
-            <section>
-                <h2>Ingresos</h2>
-                <LinkMenu path="/ingresos/registro-ventas" text="Registro de ventas"/>
-                <LinkMenu path="/ingresos/cobranzas" text="Cobranza"/>
-                <LinkMenu path="/ingresos/notas-ventas" text="Notas de venta"/>
-                <LinkMenu path="/ingresos/otros-ingresos" text="Otros ingresos"/>
-            </section>
+            <SectionMenu>
+                <H2Menu><ImgIcon src={HandIcon}/> Ingresos</H2Menu>
+                <LinkNested to="/ingresos/registro-ventas">Registro de ventas</LinkNested>
+                <LinkNested to="/ingresos/cobranzas">Cobranza</LinkNested>
+                <LinkNested to="/ingresos/notas-ventas">Notas de venta</LinkNested>
+                <LinkNested to="/ingresos/otros-ingresos">Otros ingresos</LinkNested>
+            </SectionMenu>
 
-            <section>
-                <h2>Egresos</h2>
-                <LinkMenu path="/egresos/compra-mercaderia" text="Compra de mercadería"/>
-                <LinkMenu path="/egresos/honorarios" text="Honorarios"/>
-                <LinkMenu path="/egresos/remuneraciones" text="Remuneraciones"/>
-                <LinkMenu path="/egresos/impuestos" text="Impuestos"/>
-                <LinkMenu path="/egresos/creditos-bancarios" text="Créditos bancarios"/>
-                <LinkMenu path="/egresos/gastos-recurrentes" text="Gastos recurrentes"/>
-                <LinkMenu path="/egresos/otros-gastos" text="Otros gastos"/>
-            </section>
+            <SectionMenu>
+                <H2Menu><ImgIcon src={BillIcon}/> Egresos</H2Menu>
+                <LinkNested to="/egresos/compra-mercaderia">Compra de mercadería</LinkNested>
+                <LinkNested to="/egresos/honorarios">Honorarios</LinkNested>
+                <LinkNested to="/egresos/remuneraciones">Remuneraciones</LinkNested>
+                <LinkNested to="/egresos/impuestos">Impuestos</LinkNested>
+                <LinkNested to="/egresos/creditos-bancarios">Créditos bancarios</LinkNested>
+                <LinkNested to="/egresos/gastos-recurrentes">Gastos recurrentes</LinkNested>
+                <LinkNested to="/egresos/otros-gastos">Otros gastos</LinkNested>
+            </SectionMenu>
                 
-            <LinkMenu path="/bancos" text="Bancos"/>
+            <LinkTitle to="/bancos"><ImgIcon src={BankIcon}/> Bancos</LinkTitle>
 
-            <section>
-                <h2>Reportería</h2> 
-                <LinkMenu path="/reporteria/flujo-caja" text="Flujo de caja"/>
-                <LinkMenu path="/reporteria/billetera" text="Billetera"/>
-            </section>
+            <SectionMenu>
+                <H2Menu><ImgIcon src={FileIcon}/> Reportería</H2Menu>
+                <LinkNested to="/reporteria/flujo-caja">Flujo de caja</LinkNested>
+                <LinkNested to="/reporteria/billetera">Billetera</LinkNested>
+            </SectionMenu>
 
-            <LinkMenu path="/gestion-clientes" text="Gestión de clientes y proveedores"/>
+            <LinkTitle to="/gestion-clientes"><ImgIcon src={UserIcon}/> Gestión de clientes y proveedores</LinkTitle>
 
-            <LinkMenu path="/ajustes" text="Ajustes"/>
-        </aside>
+            <LinkTitle to="/ajustes"><ImgIcon src={SettingIcon}/> Ajustes</LinkTitle>
+        </MenuStyle>
     )
 }
 

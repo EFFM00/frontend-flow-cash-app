@@ -4,7 +4,7 @@ export const MenuContainer = styled.div`
     height: calc(100vh - 2.4rem);
     top: 2.4rem;
     background-color: #616161;
-    max-width: 16.5rem;
+    max-width: 20rem;
     width: 95%;
     transform: translateX(${props => (props.$is_open ? '0' : '-100%')});
     transition: transform 0.3s ease-in-out;
