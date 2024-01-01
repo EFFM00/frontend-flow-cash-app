@@ -39,7 +39,7 @@ const MenuContent = () => {
             <Link to="/bancos">Bancos</Link>
 
             <section>
-                <h2>Reportería</h2>
+                <h2>Reportería</h2> 
                 <Link to="/reporteria/flujo-caja">Flujo de caja</Link>
                 <Link to="/reporteria/billetera">Billetera</Link>
             </section>
