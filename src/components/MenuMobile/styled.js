@@ -9,7 +9,7 @@ export const MenuContainer = styled.div`
     transform: translateX(${props => (props.$is_open ? '0' : '-100%')});
     transition: transform 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    overflow: scroll;
+    overflow-y: scroll;
     position: fixed;
 `
 
