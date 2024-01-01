@@ -7,6 +7,7 @@ import BtnSubmit from "../../components/BtnSubmit/BtnSubmit";
 import { FieldGroup, FormContainer, LoginForm, PageForm } from "./styled";
 import TitleSection from "../../components/TitleSection/TitleSection";
 import LinkText from "../../components/LinkText/LinkText";
+import AuthLayout from "../../components/AuthLayout";
 
 const Login = () => {
 
@@ -46,48 +47,50 @@ const Login = () => {
 
 
     return(
-        <PageForm>
-            <FormContainer>
-                <LoginForm>
-                    <TitleSection ubication={"center"} text={"Login"}/>
-                    <FieldGroup>
-                        <FieldGeneric 
-                        title="Email" 
-                        type="email" 
-                        name="email" 
-                        id="email" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Email"/>
-                        {
-                            formik.touched.email && formik.errors.email && (
-                                <SpanError text={formik.errors.email}/>
-                            )
-                        }
-                    </FieldGroup>
+        <AuthLayout authentication={false}>
+            <PageForm>
+                <FormContainer>
+                    <LoginForm>
+                        <TitleSection ubication={"center"} text={"Login"}/>
+                        <FieldGroup>
+                            <FieldGeneric 
+                            title="Email" 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Email"/>
+                            {
+                                formik.touched.email && formik.errors.email && (
+                                    <SpanError text={formik.errors.email}/>
+                                )
+                            }
+                        </FieldGroup>
 
-                    <FieldGroup>
-                        <FieldGeneric 
-                        title="Contraseña" 
-                        type="password"
-                        name="password"
-                        id="password" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Contraseña"/>
-                        {
-                            formik.touched.password && formik.errors.password && (
-                                <SpanError text={formik.errors.password}/>
-                            )
-                        }
-                    </FieldGroup>
+                        <FieldGroup>
+                            <FieldGeneric 
+                            title="Contraseña" 
+                            type="password"
+                            name="password"
+                            id="password" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Contraseña"/>
+                            {
+                                formik.touched.password && formik.errors.password && (
+                                    <SpanError text={formik.errors.password}/>
+                                )
+                            }
+                        </FieldGroup>
 
-                    <LinkText text="¿No tienes cuenta? Créala acá" path="/register" ubication="left"/>
+                        <LinkText text="¿No tienes cuenta? Créala acá" path="/register" ubication="left"/>
 
-                    <BtnSubmit type="submit" text="Iniciar sesión" onClick={() => {}} color="#59d999" colorText={"black"} ubication="center"/>
-                </LoginForm>
-            </FormContainer>
-        </PageForm>
+                        <BtnSubmit type="submit" text="Iniciar sesión" onClick={() => {}} color="#59d999" colorText={"black"} ubication="center"/>
+                    </LoginForm>
+                </FormContainer>
+            </PageForm>
+        </AuthLayout>
     );
 }
 
