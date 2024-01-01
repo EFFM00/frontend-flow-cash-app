@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ImgIcon, MenuContainer, NavBar, NavContainer } from "./styled";
+import { MenuContainer, NavContainer } from "./styled";
 import useScreenSize from "../../hooks/useScreenSize";
 
 const LateralMenu = () => {

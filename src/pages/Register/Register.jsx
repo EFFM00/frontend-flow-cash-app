@@ -7,6 +7,7 @@ import BtnSubmit from "../../components/BtnSubmit/BtnSubmit";
 import TitleSection from "../../components/TitleSection/TitleSection";
 import LinkText from "../../components/LinkText/LinkText";
 import { FieldGroup, FormContainer, LoginForm, PageForm } from "../Login/styled";
+import AuthLayout from "../../components/AuthLayout";
 
 const Register = () => {
 
