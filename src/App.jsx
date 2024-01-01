@@ -44,9 +44,41 @@ const App = () => {
 
                 <Route path="/dashboard/*" element={<DashboardWrapper />}>
                     <Route index element={<Dashboard />}/>
-                    <Route path="h" element={<h1>HOLAAAAAAAA index</h1>} />
                 </Route>
 
+                <Route path="/ingresos/*" element={<DashboardWrapper />}>
+                    <Route path="registro-ventas" element={<>registro-ventas</>}/>
+                    <Route path="cobranzas" element={<>cobranzas</>}/>
+                    <Route path="notas-ventas" element={<>notas-ventas</>}/>
+                    <Route path="otros-ingresos" element={<>otros-ingresos</>}/>
+                </Route>
+
+                <Route path="/egresos/*" element={<DashboardWrapper />}>
+                    <Route path="compra-mercaderia" element={<>compra-mercaderia</>}/>
+                    <Route path="honorarios" element={<>honorarios</>}/>
+                    <Route path="remuneraciones" element={<>remuneraciones</>}/>
+                    <Route path="impuestos" element={<>impuestos</>}/>
+                    <Route path="creditos-bancarios" element={<>creditos-bancarios</>}/>
+                    <Route path="gastos-recurrentes" element={<>gastos-recurrentes</>}/>
+                    <Route path="otros-gastos" element={<>otros-gastos</>}/>
+                </Route>
+
+                <Route path="/bancos/*" element={<DashboardWrapper />}>
+                    <Route index element={<>bancos</>}/>
+                </Route>
+
+                <Route path="/reporteria/*" element={<DashboardWrapper />}>
+                    <Route path="flujo-caja" element={<>flujo-caja</>}/>
+                    <Route path="billetera" element={<>billetera</>}/>
+                </Route>
+
+                <Route path="/gestion-clientes/*" element={<DashboardWrapper />}>
+                    <Route index element={<>gestion-clientes</>}/>
+                </Route>
+
+                <Route path="/ajustes/*" element={<DashboardWrapper />}>
+                    <Route index element={<>ajustes</>}/>
+                </Route>
             </Routes>
         </BrowserRouter>
     );

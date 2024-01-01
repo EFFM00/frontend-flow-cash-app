@@ -10,6 +10,7 @@ export const DashboardWrapperCont = styled.div`
 `
 
 export const OutletCont = styled.div`
+    background-color: #E7E7E7;
     grid-column: 1 / 2;
 
     @media (min-width: 768px) {

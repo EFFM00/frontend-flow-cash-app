@@ -1,52 +1,40 @@
-import { Link } from "react-router-dom";
+import LinkMenu from "../LinkMenu/LinkMenu";
 
 const MenuContent = () => {
     return (
         <aside>
-            <Link to="/dashboard">Movimientos</Link>
+            <LinkMenu path="/dashboard" text="Movimientos"/>
 
             <section>
                 <h2>Ingresos</h2>
-                <Link to="/ingresos/registro-ventas">Registro de ventas</Link>
-                <Link to="/ingresos/cobranzas">Cobranza</Link>
-                <Link to="/ingresos/notas-ventas">Notas de venta</Link>
-                <Link to="/ingresos/otros-ingresos">Otros ingresos</Link>
+                <LinkMenu path="/ingresos/registro-ventas" text="Registro de ventas"/>
+                <LinkMenu path="/ingresos/cobranzas" text="Cobranza"/>
+                <LinkMenu path="/ingresos/notas-ventas" text="Notas de venta"/>
+                <LinkMenu path="/ingresos/otros-ingresos" text="Otros ingresos"/>
             </section>
 
             <section>
                 <h2>Egresos</h2>
-                <Link to="/egresos/compra-mercaderia">Compra de mercadería</Link>
-                <Link to="/egresos/honorarios">Honorarios</Link>
-                <Link to="/egresos/remuneraciones">Remuneraciones</Link>
-                <Link to="/egresos/impuestos">Impuestos</Link>
-                <Link to="/egresos/creditos-bancarios">Créditos bancarios</Link>
-                <Link to="/egresos/gastos-recurrentes">Gastos recurrentes</Link>
-                <Link to="/egresos/otros-gastos">Otros gastos</Link>
+                <LinkMenu path="/egresos/compra-mercaderia" text="Compra de mercadería"/>
+                <LinkMenu path="/egresos/honorarios" text="Honorarios"/>
+                <LinkMenu path="/egresos/remuneraciones" text="Remuneraciones"/>
+                <LinkMenu path="/egresos/impuestos" text="Impuestos"/>
+                <LinkMenu path="/egresos/creditos-bancarios" text="Créditos bancarios"/>
+                <LinkMenu path="/egresos/gastos-recurrentes" text="Gastos recurrentes"/>
+                <LinkMenu path="/egresos/otros-gastos" text="Otros gastos"/>
             </section>
                 
-            
-            <section>
-                <h2>Egresos</h2>
-                <Link to="/egresos/compra-mercaderia">Compra de mercadería</Link>
-                <Link to="/egresos/honorarios">Honorarios</Link>
-                <Link to="/egresos/remuneraciones">Remuneraciones</Link>
-                <Link to="/egresos/impuestos">Impuestos</Link>
-                <Link to="/egresos/creditos-bancarios">Créditos bancarios</Link>
-                <Link to="/egresos/gastos-recurrentes">Gastos recurrentes</Link>
-                <Link to="/egresos/otros-gastos">Otros gastos</Link>
-            </section>
-                
-            <Link to="/bancos">Bancos</Link>
+            <LinkMenu path="/bancos" text="Bancos"/>
 
             <section>
                 <h2>Reportería</h2> 
-                <Link to="/reporteria/flujo-caja">Flujo de caja</Link>
-                <Link to="/reporteria/billetera">Billetera</Link>
+                <LinkMenu path="/reporteria/flujo-caja" text="Flujo de caja"/>
+                <LinkMenu path="/reporteria/billetera" text="Billetera"/>
             </section>
 
-            <Link to="/gestion-clientes">Gestión de clientes y proveedores</Link>
+            <LinkMenu path="/gestion-clientes" text="Gestión de clientes y proveedores"/>
 
-            <Link to="/ajustes">Ajustes</Link>
+            <LinkMenu path="/ajustes" text="Ajustes"/>
         </aside>
     )
 }
