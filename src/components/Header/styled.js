@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 
-
 export const ImgIcon = styled.img`
     display: block;
     width: 1.3rem;
@@ -20,4 +19,5 @@ export const NavBar = styled.nav`
     justify-content: end;
     position: sticky;
     top: 0;
+    z-index: 999;
 `
