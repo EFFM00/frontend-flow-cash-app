@@ -14,7 +14,7 @@ export const LinkTitle = styled(Link)`
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 
     &:hover {
         color: #59d999;
@@ -26,8 +26,9 @@ export const LinkNested = styled(Link)`
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-left: 1rem;
+    transition: color 0.2s ease;
 
     &:hover {
         color: #59d999;
@@ -40,7 +41,7 @@ export const H2Menu = styled.h2`
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 `;
 
 export const SectionMenu = styled.section`
