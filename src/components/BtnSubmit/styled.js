@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const Btn = styled.button`
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: ${props => props.$colortext ?? "black"};
     align-self: ${props => props.$ubication};

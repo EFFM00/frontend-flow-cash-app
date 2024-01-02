@@ -7,6 +7,7 @@ import BtnSubmit from "../../components/BtnSubmit/BtnSubmit";
 import TitleSection from "../../components/TitleSection/TitleSection";
 import LinkText from "../../components/LinkText/LinkText";
 import { FieldGroup, FormContainer, LoginForm, PageForm } from "../Login/styled";
+import AuthLayout from "../../components/AuthLayout";
 
 const Register = () => {
 
@@ -60,112 +61,114 @@ const Register = () => {
 
 
     return(
-        <PageForm>
-            <FormContainer>
-                <LoginForm>
-                    <TitleSection ubication={"center"} text={"Registro"}/>
-                    <FieldGroup>
-                        <FieldGeneric 
-                        title="Nombre" 
-                        type="text" 
-                        name="first_name" 
-                        id="first_name" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Nombre"/>
-                        {
-                            formik.touched.first_name && formik.errors.first_name && (
-                                <SpanError text={formik.errors.first_name}/>
-                            )
-                        }
-                    </FieldGroup>
+        <AuthLayout authentication={false}>
+            <PageForm>
+                <FormContainer>
+                    <LoginForm>
+                        <TitleSection ubication={"center"} text={"Registro"}/>
+                        <FieldGroup>
+                            <FieldGeneric 
+                            title="Nombre" 
+                            type="text" 
+                            name="first_name" 
+                            id="first_name" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Nombre"/>
+                            {
+                                formik.touched.first_name && formik.errors.first_name && (
+                                    <SpanError text={formik.errors.first_name}/>
+                                )
+                            }
+                        </FieldGroup>
 
-                    <FieldGroup>
-                        <FieldGeneric 
-                        title="Apellido" 
-                        type="text" 
-                        name="last_name" 
-                        id="last_name" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Apellido"/>
-                        {
-                            formik.touched.last_name && formik.errors.last_name && (
-                                <SpanError text={formik.errors.last_name}/>
-                            )
-                        }
-                    </FieldGroup>
+                        <FieldGroup>
+                            <FieldGeneric 
+                            title="Apellido" 
+                            type="text" 
+                            name="last_name" 
+                            id="last_name" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Apellido"/>
+                            {
+                                formik.touched.last_name && formik.errors.last_name && (
+                                    <SpanError text={formik.errors.last_name}/>
+                                )
+                            }
+                        </FieldGroup>
 
-                    <FieldGroup>
-                        <FieldGeneric 
-                        title="Teléfono" 
-                        type="text" 
-                        name="phone" 
-                        id="phone" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Teléfono"/>
-                        {
-                            formik.touched.phone && formik.errors.phone && (
-                                <SpanError text={formik.errors.phone}/>
-                            )
-                        }
-                    </FieldGroup>
+                        <FieldGroup>
+                            <FieldGeneric 
+                            title="Teléfono" 
+                            type="text" 
+                            name="phone" 
+                            id="phone" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Teléfono"/>
+                            {
+                                formik.touched.phone && formik.errors.phone && (
+                                    <SpanError text={formik.errors.phone}/>
+                                )
+                            }
+                        </FieldGroup>
 
-                    <FieldGroup>
-                        <FieldGeneric 
-                        title="Documento" 
-                        type="document_id" 
-                        name="document_id" 
-                        id="document_id" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Documento"/>
-                        {
-                            formik.touched.document_id && formik.errors.document_id && (
-                                <SpanError text={formik.errors.document_id}/>
-                            )
-                        }
-                    </FieldGroup>
+                        <FieldGroup>
+                            <FieldGeneric 
+                            title="Documento" 
+                            type="document_id" 
+                            name="document_id" 
+                            id="document_id" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Documento"/>
+                            {
+                                formik.touched.document_id && formik.errors.document_id && (
+                                    <SpanError text={formik.errors.document_id}/>
+                                )
+                            }
+                        </FieldGroup>
 
-                    <FieldGroup>
-                        <FieldGeneric 
-                        title="Email" 
-                        type="email" 
-                        name="email" 
-                        id="email" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Email"/>
-                        {
-                            formik.touched.email && formik.errors.email && (
-                                <SpanError text={formik.errors.email}/>
-                            )
-                        }
-                    </FieldGroup>
+                        <FieldGroup>
+                            <FieldGeneric 
+                            title="Email" 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Email"/>
+                            {
+                                formik.touched.email && formik.errors.email && (
+                                    <SpanError text={formik.errors.email}/>
+                                )
+                            }
+                        </FieldGroup>
 
-                    <FieldGroup>
-                        <FieldGeneric 
-                        title="Contraseña" 
-                        type="password"
-                        name="password"
-                        id="password" 
-                        onChange={formik.handleChange} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Contraseña"/>
-                        {
-                            formik.touched.password && formik.errors.password && (
-                                <SpanError text={formik.errors.password}/>
-                            )
-                        }
-                    </FieldGroup>
+                        <FieldGroup>
+                            <FieldGeneric 
+                            title="Contraseña" 
+                            type="password"
+                            name="password"
+                            id="password" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Contraseña"/>
+                            {
+                                formik.touched.password && formik.errors.password && (
+                                    <SpanError text={formik.errors.password}/>
+                                )
+                            }
+                        </FieldGroup>
 
-                    <LinkText text="¿Ya tienes cuenta? Inicia sesión" path="/login" ubication="left"/>
+                        <LinkText text="¿Ya tienes cuenta? Inicia sesión" path="/login" ubication="left"/>
 
-                    <BtnSubmit type="submit" text="Crear cuenta" onClick={() => {}} color="#59d999" colorText={"black"} ubication="center"/>
-                </LoginForm>
-            </FormContainer>
-        </PageForm>
+                        <BtnSubmit type="submit" text="Crear cuenta" onClick={() => {}} color="#59d999" colorText={"black"} ubication="center"/>
+                    </LoginForm>
+                </FormContainer>
+            </PageForm>
+        </AuthLayout>
     );
 }
 
