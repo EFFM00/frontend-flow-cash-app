@@ -8,6 +8,7 @@ import { DashboardWrapperCont, OutletCont } from "./App";
 import MenuDesktop from "./components/MenuDesktop/MenuDesktop";
 import useScreenSize from "./hooks/useScreenSize";
 import MenuContent from "./components/Menu/Menu";
+import PurchaseOfMerchandise from "./pages/Dash-PurchaseOfMerchandise/PurchaseOfMerchandise";
 
 function DashboardWrapper() {
 
@@ -54,7 +55,7 @@ const App = () => {
                 </Route>
 
                 <Route path="/egresos/*" element={<DashboardWrapper />}>
-                    <Route path="compra-mercaderia" element={<>compra-mercaderia</>}/>
+                    <Route path="compra-mercaderia" element={<PurchaseOfMerchandise/>}/>
                     <Route path="honorarios" element={<>honorarios</>}/>
                     <Route path="remuneraciones" element={<>remuneraciones</>}/>
                     <Route path="impuestos" element={<>impuestos</>}/>
