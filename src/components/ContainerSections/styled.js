@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PurchaseContainer = styled.div`
+export const ContainerSect = styled.div`
     min-height: calc(100vh - 2.4rem);
     padding: 1rem;
 

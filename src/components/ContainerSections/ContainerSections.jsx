@@ -1,10 +1,10 @@
-import { PurchaseContainer } from "./styled";
+import { ContainerSect } from "./styled";
 
 const ContainerSections = ({children}) => {
     return (
-        <PurchaseContainer>
+        <ContainerSect>
             {children}
-        </PurchaseContainer>
+        </ContainerSect>
     )
 }
 

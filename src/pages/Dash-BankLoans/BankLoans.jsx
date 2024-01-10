@@ -1,10 +1,11 @@
-import TitleSection from "../../components/TitleSection/TitleSection";
 import ContainerSections from "../../components/ContainerSections/ContainerSections"
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
 
 const BankLoans = () => {
+
     return (
         <ContainerSections>
-            <TitleSection text="Créditos bancarios" ubication="left"/>
+            <HeaderSection text="Créditos bancarios" btnText="Añadir registro"/>
         </ContainerSections>
     )
 }
