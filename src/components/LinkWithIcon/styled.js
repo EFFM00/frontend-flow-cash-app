@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContBtn = styled.button`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     gap: 0.2rem;
     cursor: pointer;
