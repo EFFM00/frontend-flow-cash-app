@@ -4,14 +4,17 @@ export const ContBtn = styled.button`
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.5rem;
     cursor: pointer;
     background: none;
     border: none;
     font-size: 1rem;
-    width: min-content;
 `
 
 export const PlusIcon = styled.img`
-    width: 1.7rem;
+    width: 2rem;
+
+    @media (min-width: 768px) {
+        width: 1.6rem;
+    }
 `

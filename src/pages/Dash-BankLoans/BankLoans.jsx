@@ -5,7 +5,11 @@ const BankLoans = () => {
 
     return (
         <ContainerSections>
-            <HeaderSection text="Créditos bancarios" btnText="Añadir registro"/>
+            <HeaderSection 
+            text="Créditos bancarios" 
+            btnTextPrimary="Añadir registro" 
+            btnTextSecondary="Ver todos los registros"
+            />
         </ContainerSections>
     )
 }
