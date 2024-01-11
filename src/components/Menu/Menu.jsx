@@ -21,7 +21,7 @@ const MenuContent = () => {
             <SectionMenu>
                 <H2Menu><ImgIcon src={HandIcon}/> Ingresos</H2Menu>
                 <LinkNested to="/ingresos/registro-ventas" onClick={() => dispatch(close())}>Registro de ventas</LinkNested>
-                <LinkNested to="/ingresos/cobranzas" onClick={() => dispatch(close())}>Cobranza</LinkNested>
+                <LinkNested to="/ingresos/cobranzas" onClick={() => dispatch(close())}>Cobranzas</LinkNested>
                 <LinkNested to="/ingresos/notas-ventas" onClick={() => dispatch(close())}>Notas de venta</LinkNested>
                 <LinkNested to="/ingresos/otros-ingresos" onClick={() => dispatch(close())}>Otros ingresos</LinkNested>
             </SectionMenu>

@@ -1,10 +1,14 @@
-import TitleSection from "../../components/TitleSection/TitleSection";
-import ContainerSections from "../../components/ContainerSections/ContainerSections"
+import ContainerSections from "../../components/ContainerSections/ContainerSections";
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
 
 const Taxes = () => {
     return (
         <ContainerSections>
-            <TitleSection text="Impuestos" ubication="left"/>
+            <HeaderSection
+            text="Impuestos" 
+            btnTextPrimary="Añadir registro" 
+            btnTextSecondary="Ver todos los registros"
+            />
         </ContainerSections>
     )
 }

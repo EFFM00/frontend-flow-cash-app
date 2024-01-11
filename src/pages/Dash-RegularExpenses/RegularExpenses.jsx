@@ -1,10 +1,14 @@
-import TitleSection from "../../components/TitleSection/TitleSection";
 import ContainerSections from "../../components/ContainerSections/ContainerSections"
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
 
 const RegularExpenses = () => {
     return (
         <ContainerSections>
-            <TitleSection text="Gastos recurrentes" ubication="left"/>
+            <HeaderSection
+            text="Gastos recurrentes" 
+            btnTextPrimary="Añadir registro" 
+            btnTextSecondary="Ver todos los registros"
+            />
         </ContainerSections>
     )
 }

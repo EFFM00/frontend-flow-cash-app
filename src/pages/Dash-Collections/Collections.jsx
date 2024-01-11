@@ -1,10 +1,14 @@
-import TitleSection from "../../components/TitleSection/TitleSection";
 import ContainerSections from "../../components/ContainerSections/ContainerSections"
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
 
 const Collections = () => {
     return (
         <ContainerSections>
-            <TitleSection text="Cobranzas" ubication="left"/>
+            <HeaderSection
+            text="Cobranzas" 
+            btnTextPrimary="Añadir registro" 
+            btnTextSecondary="Ver todos los registros"
+            />
         </ContainerSections>
     )
 }

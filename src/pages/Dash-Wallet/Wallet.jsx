@@ -1,10 +1,14 @@
-import TitleSection from "../../components/TitleSection/TitleSection";
 import ContainerSections from "../../components/ContainerSections/ContainerSections"
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
 
 const Wallet = () => {
     return (
         <ContainerSections>
-            <TitleSection text="Billetera" ubication="left"/>
+            <HeaderSection
+            text="Billetera" 
+            btnTextPrimary="Añadir registro" 
+            btnTextSecondary="Ver todos los registros"
+            />
         </ContainerSections>
     )
 }

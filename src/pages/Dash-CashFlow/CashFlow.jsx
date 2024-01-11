@@ -1,10 +1,14 @@
-import TitleSection from "../../components/TitleSection/TitleSection";
 import ContainerSections from "../../components/ContainerSections/ContainerSections"
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
 
 const CashFlow = () => {
     return (
         <ContainerSections>
-            <TitleSection text="Flujo de caja" ubication="left"/>
+            <HeaderSection
+            text="Flujo de caja" 
+            btnTextPrimary="Añadir registro" 
+            btnTextSecondary="Ver todos los registros"
+            />
         </ContainerSections>
     )
 }

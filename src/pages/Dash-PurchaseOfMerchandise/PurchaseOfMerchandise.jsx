@@ -1,10 +1,14 @@
-import TitleSection from "../../components/TitleSection/TitleSection";
 import ContainerSections from "../../components/ContainerSections/ContainerSections"
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
 
 const PurchaseOfMerchandise = () => {
     return (
         <ContainerSections>
-            <TitleSection text="Compra de mercadería" ubication="left"/>
+            <HeaderSection
+            text="Compra de mercadería" 
+            btnTextPrimary="Añadir registro" 
+            btnTextSecondary="Ver todos los registros"
+            />
         </ContainerSections>
     )
 }
