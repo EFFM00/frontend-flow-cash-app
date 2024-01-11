@@ -1,11 +1,13 @@
+import BtnContainerForm from "../../../components/BtnContainerForm/BtnContainerForm";
 import BtnSubmit from "../../../components/BtnSubmit/BtnSubmit";
 import FieldGeneric from "../../../components/FieldGeneric/FieldGeneric";
-import { FieldsCont } from "./styled";
+import FieldsContainerForm from "../../../components/FieldsContainerForm/FieldsContainerForm";
+import FormGeneric from "../../../components/FormGeneric/FormGeneric";
 
 const FormPurchaseOfMerchandise = () => {
     return (
-        <form>
-            <FieldsCont>
+        <FormGeneric>
+            <FieldsContainerForm>
                 <FieldGeneric
                 title="Fecha"
                 type="date"
@@ -45,37 +47,29 @@ const FormPurchaseOfMerchandise = () => {
                 onBlur={() => {}}
                 placeholder="Detalles"
                 />
+            </FieldsContainerForm>
 
-                <FieldGeneric
-                title="Detalles"
-                type="text"
-                name="details"
-                id="details"
-                onChange={() => {}}
-                onBlur={() => {}}
-                placeholder="Detalles"
+            <BtnContainerForm>
+                <BtnSubmit
+                type="reset" 
+                text="Cancelar" 
+                onClick={() => {}} 
+                color="#FB7A7A" 
+                colorText={"black"} 
+                ubication="center"
                 />
-            </FieldsCont>
 
-            <BtnSubmit
-            type="submit" 
-            text="Guardar" 
-            onClick={() => {}} 
-            color="#59d999" 
-            colorText={"black"} 
-            ubication="center"
-            />
+                <BtnSubmit
+                type="submit" 
+                text="Guardar" 
+                onClick={() => {}} 
+                color="#59d999" 
+                colorText={"black"} 
+                ubication="center"
+                />
+            </BtnContainerForm>
 
-            <BtnSubmit
-            type="submit" 
-            text="Cancelar" 
-            onClick={() => {}} 
-            color="#AF5151" 
-            colorText={"black"} 
-            ubication="center"
-            />
-
-        </form>
+        </FormGeneric>
     );
 };
 
