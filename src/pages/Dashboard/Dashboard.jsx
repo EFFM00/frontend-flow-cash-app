@@ -1,8 +1,12 @@
-import { DashboardContainer } from "./styled";
+import ContainerSections from "../../components/ContainerSections/ContainerSections";
+import TitleSection from "../../components/TitleSection/TitleSection";
 
 const Dashboard = () => {
     return (
-        <DashboardContainer>HOLA</DashboardContainer>
+        <ContainerSections>
+            <TitleSection text={"Dashboard"} ubication="left"/>
+            <p>Acá irá el dashboard</p>
+        </ContainerSections>
     );
 }
 

@@ -7,41 +7,47 @@ import BankIcon from "../../assets/building-columns-solid.svg";
 import UserIcon from "../../assets/user-solid.svg";
 import FileIcon from "../../assets/file-lines-regular.svg";
 import SettingIcon from "../../assets/gear-solid.svg";
+import { useDispatch } from "react-redux";
+import { close } from "../../store/menuSlice";
+
 const MenuContent = () => {
+
+    const dispatch = useDispatch();
+    
     return (
         <MenuStyle>
             <LinkTitle to="/dashboard"><ImgIcon src={ChartIcon}/> Movimientos</LinkTitle>
 
             <SectionMenu>
                 <H2Menu><ImgIcon src={HandIcon}/> Ingresos</H2Menu>
-                <LinkNested to="/ingresos/registro-ventas">Registro de ventas</LinkNested>
-                <LinkNested to="/ingresos/cobranzas">Cobranza</LinkNested>
-                <LinkNested to="/ingresos/notas-ventas">Notas de venta</LinkNested>
-                <LinkNested to="/ingresos/otros-ingresos">Otros ingresos</LinkNested>
+                <LinkNested to="/ingresos/registro-ventas" onClick={() => dispatch(close())}>Registro de ventas</LinkNested>
+                <LinkNested to="/ingresos/cobranzas" onClick={() => dispatch(close())}>Cobranzas</LinkNested>
+                <LinkNested to="/ingresos/notas-ventas" onClick={() => dispatch(close())}>Notas de venta</LinkNested>
+                <LinkNested to="/ingresos/otros-ingresos" onClick={() => dispatch(close())}>Otros ingresos</LinkNested>
             </SectionMenu>
 
             <SectionMenu>
                 <H2Menu><ImgIcon src={BillIcon}/> Egresos</H2Menu>
-                <LinkNested to="/egresos/compra-mercaderia">Compra de mercadería</LinkNested>
-                <LinkNested to="/egresos/honorarios">Honorarios</LinkNested>
-                <LinkNested to="/egresos/remuneraciones">Remuneraciones</LinkNested>
-                <LinkNested to="/egresos/impuestos">Impuestos</LinkNested>
-                <LinkNested to="/egresos/creditos-bancarios">Créditos bancarios</LinkNested>
-                <LinkNested to="/egresos/gastos-recurrentes">Gastos recurrentes</LinkNested>
-                <LinkNested to="/egresos/otros-gastos">Otros gastos</LinkNested>
+                <LinkNested to="/egresos/compra-mercaderia" onClick={() => dispatch(close())}>Compra de mercadería</LinkNested>
+                <LinkNested to="/egresos/honorarios" onClick={() => dispatch(close())}>Honorarios</LinkNested>
+                <LinkNested to="/egresos/remuneraciones" onClick={() => dispatch(close())}>Remuneraciones</LinkNested>
+                <LinkNested to="/egresos/impuestos" onClick={() => dispatch(close())}>Impuestos</LinkNested>
+                <LinkNested to="/egresos/creditos-bancarios" onClick={() => dispatch(close())}>Créditos bancarios</LinkNested>
+                <LinkNested to="/egresos/gastos-recurrentes" onClick={() => dispatch(close())}>Gastos recurrentes</LinkNested>
+                <LinkNested to="/egresos/otros-gastos" onClick={() => dispatch(close())}>Otros gastos</LinkNested>
             </SectionMenu>
                 
-            <LinkTitle to="/bancos"><ImgIcon src={BankIcon}/> Bancos</LinkTitle>
+            <LinkTitle to="/bancos" onClick={() => dispatch(close())}><ImgIcon src={BankIcon}/> Bancos</LinkTitle>
 
             <SectionMenu>
                 <H2Menu><ImgIcon src={FileIcon}/> Reportería</H2Menu>
-                <LinkNested to="/reporteria/flujo-caja">Flujo de caja</LinkNested>
-                <LinkNested to="/reporteria/billetera">Billetera</LinkNested>
+                <LinkNested to="/reporteria/flujo-caja" onClick={() => dispatch(close())}>Flujo de caja</LinkNested>
+                <LinkNested to="/reporteria/billetera" onClick={() => dispatch(close())}>Billetera</LinkNested>
             </SectionMenu>
 
-            <LinkTitle to="/gestion-clientes"><ImgIcon src={UserIcon}/> Gestión de clientes y proveedores</LinkTitle>
+            <LinkTitle to="/gestion-clientes" onClick={() => dispatch(close())}><ImgIcon src={UserIcon}/> Gestión de clientes y proveedores</LinkTitle>
 
-            <LinkTitle to="/ajustes"><ImgIcon src={SettingIcon}/> Ajustes</LinkTitle>
+            <LinkTitle to="/ajustes" onClick={() => dispatch(close())}><ImgIcon src={SettingIcon}/> Ajustes</LinkTitle>
         </MenuStyle>
     )
 }
