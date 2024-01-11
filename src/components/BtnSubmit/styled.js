@@ -9,7 +9,7 @@ export const Btn = styled.button`
     background-color: ${props => props.$colorback};
     padding: 0.6rem;
     border-radius: 5px;
-    border: none;
+    border: 1px solid black;
     transition: background-color 0.12s ease, color 0.12s ease;
     font-size: 1rem;
     font-weight: 600;

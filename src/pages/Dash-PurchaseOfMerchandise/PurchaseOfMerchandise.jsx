@@ -24,7 +24,7 @@ const PurchaseOfMerchandise = () => {
             />
             {
                 isViewMode ? (
-                    <></>
+                    <>Acá estará la tabla para visualizar todos los datos</>
                 ) : (
                     <FormPurchaseOfMerchandise/>
                 )
