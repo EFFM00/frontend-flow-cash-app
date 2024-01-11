@@ -11,15 +11,15 @@ const formRegistrySlice = createSlice({
         handlerFormRegistry: (state) => {
             state.isView = !state.isView
         },
-        open: (state) => {
+        changeToView: (state) => {
             state.isView = true
         },
-        close: (state) => {
+        changeToForm: (state) => {
             state.isView = false
         },
     }
 });
 
-export const {handlerFormRegistry, open, close} = formRegistrySlice.actions;
+export const {handlerFormRegistry, changeToView, changeToForm} = formRegistrySlice.actions;
 
 export default formRegistrySlice.reducer;

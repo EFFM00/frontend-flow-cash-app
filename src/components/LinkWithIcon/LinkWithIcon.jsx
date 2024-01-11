@@ -12,12 +12,12 @@ const LinkWithIcon = ({btnTextPrimary, btnTextSecondary, iconPathPrimary, iconPa
     const {width} = useScreenSize();
     const dispatch = useDispatch();
 
-    const viewMode = useSelector((state) => state.formRegistry.isView);
+    const isViewMode = useSelector((state) => state.formRegistry.isView);
 
     useEffect(() => {
-        setBtnText(viewMode ? btnTextSecondary : btnTextPrimary);
-        setIcon(viewMode ? iconPathSecondary : iconPathPrimary);
-    }, [viewMode])
+        setBtnText(isViewMode ? btnTextPrimary : btnTextSecondary);
+        setIcon(isViewMode ? iconPathPrimary : iconPathSecondary);
+    }, [isViewMode])
     
     const handlerClick = () => {
         dispatch(handlerFormRegistry())
