@@ -4,79 +4,81 @@ import FieldGeneric from "../../../components/FieldGeneric/FieldGeneric"
 import FieldsContainerForm from "../../../components/FieldsContainerForm/FieldsContainerForm"
 import FormGeneric from "../../../components/FormGeneric/FormGeneric"
 
-const FormFees = () => {
+const FormRemunerations = () => {
     return (
         <FormGeneric>
             <FieldsContainerForm>
-                <FieldGeneric
-                title="Categoría gasto"
-                type="text"
-                name="categoria_gasto"
-                id="categoria_gasto"
-                onChange={() => {}}
-                onBlur={() => {}}
-                placeholder="Categoría gasto"
-                />
 
                 <FieldGeneric
-                title="Tipo de gasto"
-                type="text"
-                name="tipo_gasto"
-                id="tipo_gasto"
-                onChange={() => {}}
-                onBlur={() => {}}
-                placeholder="Tipo de gasto"
-                />
-
-                <FieldGeneric
-                title="Centro de costo"
-                type="text"
-                name="centro_costo"
-                id="centro_costo"
-                onChange={() => {}}
-                onBlur={() => {}}
-                placeholder="Centro de costo"
-                />
-
-                <FieldGeneric
-                title="Fecha"
+                title="Fecha de pago"
                 type="date"
-                name="fecha"
-                id="fecha"
+                name="fecha_pago"
+                id="fecha_pago"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Fecha"
+                placeholder="Fecha de pago"
                 />
 
                 <FieldGeneric
-                title="Nro. Documento"
+                title="Anticipo"
                 type="number"
-                name="nro_documento"
-                id="nro_documento"
+                name="anticipo"
+                id="anticipo"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Nro. Documento"
+                placeholder="Anticipo"
                 />
 
                 <FieldGeneric
-                title="Monto"
-                type="number"
-                name="monto"
-                id="monto"
+                title="Funcionario"
+                type="text"
+                name="funcionario"
+                id="funcionario"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Monto"
+                placeholder="Funcionario"
                 />
 
                 <FieldGeneric
-                title="Detalle"
-                type="number"
-                name="detalle"
-                id="detalle"
+                title="RUT"
+                type="text"
+                name="rut"
+                id="rut"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Detalle"
+                placeholder="RUT"
                 />
+
+                <FieldGeneric
+                title="Sueldo"
+                type="number"
+                name="sueldo"
+                id="sueldo"
+                onChange={() => {}}
+                onBlur={() => {}}
+                placeholder="Sueldo"
+                />
+
+                <FieldGeneric
+                title="Costo total"
+                type="number"
+                name="costo_total"
+                id="costo_total"
+                onChange={() => {}}
+                onBlur={() => {}}
+                placeholder="Costo total"
+                />
+
+                <FieldGeneric
+                title="D014 - Anticipo de sueldos"
+                type="text"
+                name="d014_anticipo"
+                id="d014_anticipo"
+                onChange={() => {}}
+                onBlur={() => {}}
+                placeholder="D014 - Anticipo de sueldos"
+                />
+
             </FieldsContainerForm>
             <BtnContainerForm>
                 <BtnSubmit
@@ -101,4 +103,4 @@ const FormFees = () => {
     )
 }
 
-export default FormFees;
+export default FormRemunerations;

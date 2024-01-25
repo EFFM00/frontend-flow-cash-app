@@ -24,6 +24,7 @@ import Banks from "./pages/Dash-Banks/Banks";
 import ClientAndVendorManagement from "./pages/Dash-ClientAndVendorManagement/ClientAndVendorManagement";
 import CashFlow from "./pages/Dash-CashFlow/CashFlow";
 import Wallet from "./pages/Dash-Wallet/Wallet";
+import Permissions from "./pages/Dash-Permissions/Permissions";
 
 function DashboardWrapper() {
 
@@ -94,6 +95,10 @@ const App = () => {
 
                 <Route path="/ajustes/*" element={<DashboardWrapper />}>
                     <Route index element={<Settings/>}/>
+                </Route>
+
+                <Route path="/permisos/*" element={<DashboardWrapper />}>
+                    <Route index element={<Permissions/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

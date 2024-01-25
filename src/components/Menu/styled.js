@@ -11,13 +11,13 @@ export const MenuStyle = styled.aside`
 
 export const LinkTitle = styled(Link)`
     display: block;
-    color: #fff;
+    color: ${props => props.$isselected ? "#59d999": "#fff"};
     text-decoration: none;
     font-weight: 500;
     font-size: 1.5rem;
 
     &:hover {
-        color: #59d999;
+        color: ${props => props.$isselected ? "#fff" : "#59d999"};
     }
 `;
 

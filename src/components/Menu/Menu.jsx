@@ -48,6 +48,7 @@ const MenuContent = () => {
             <LinkTitle to="/gestion-clientes" onClick={() => dispatch(close())}><ImgIcon src={UserIcon}/> Gestión de clientes y proveedores</LinkTitle>
 
             <LinkTitle to="/ajustes" onClick={() => dispatch(close())}><ImgIcon src={SettingIcon}/> Ajustes</LinkTitle>
+            <LinkTitle to="/permisos" onClick={() => dispatch(close())}><ImgIcon src={SettingIcon}/> Permisos</LinkTitle>
         </MenuStyle>
     )
 }

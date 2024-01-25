@@ -4,7 +4,7 @@ import FieldGeneric from "../../../components/FieldGeneric/FieldGeneric"
 import FieldsContainerForm from "../../../components/FieldsContainerForm/FieldsContainerForm"
 import FormGeneric from "../../../components/FormGeneric/FormGeneric"
 
-const FormFees = () => {
+const FormOtherExpenses = () => {
     return (
         <FormGeneric>
             <FieldsContainerForm>
@@ -101,4 +101,4 @@ const FormFees = () => {
     )
 }
 
-export default FormFees;
+export default FormOtherExpenses;

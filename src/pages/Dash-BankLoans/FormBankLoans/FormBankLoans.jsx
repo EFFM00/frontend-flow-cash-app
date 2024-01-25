@@ -4,79 +4,101 @@ import FieldGeneric from "../../../components/FieldGeneric/FieldGeneric"
 import FieldsContainerForm from "../../../components/FieldsContainerForm/FieldsContainerForm"
 import FormGeneric from "../../../components/FormGeneric/FormGeneric"
 
-const FormFees = () => {
+const FormBankLoans = () => {
     return (
         <FormGeneric>
             <FieldsContainerForm>
+
                 <FieldGeneric
-                title="Categoría gasto"
+                title="Banco"
                 type="text"
-                name="categoria_gasto"
-                id="categoria_gasto"
+                name="banco"
+                id="banco"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Categoría gasto"
+                placeholder="Banco"
                 />
 
                 <FieldGeneric
-                title="Tipo de gasto"
+                title="Tipo de crédito"
                 type="text"
-                name="tipo_gasto"
-                id="tipo_gasto"
+                name="tipo_credito"
+                id="tipo_credito"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Tipo de gasto"
+                placeholder="Tipo de crédito"
                 />
 
                 <FieldGeneric
-                title="Centro de costo"
+                title="Categoría de crédito"
                 type="text"
-                name="centro_costo"
-                id="centro_costo"
+                name="categoria_credito"
+                id="categoria_credito"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Centro de costo"
+                placeholder="Categoría de crédito"
                 />
 
                 <FieldGeneric
-                title="Fecha"
+                title="Vencimiento"
                 type="date"
-                name="fecha"
-                id="fecha"
+                name="vencimiento"
+                id="vencimiento"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Fecha"
+                placeholder="Vencimiento"
                 />
 
                 <FieldGeneric
-                title="Nro. Documento"
+                title="Cuota"
                 type="number"
-                name="nro_documento"
-                id="nro_documento"
+                name="cuota"
+                id="cuota"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Nro. Documento"
+                placeholder="Cuota"
                 />
 
                 <FieldGeneric
-                title="Monto"
+                title="Capital cuota"
                 type="number"
-                name="monto"
-                id="monto"
+                name="capital_cuota"
+                id="capital_cuota"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Monto"
+                placeholder="Capital cuota"
                 />
 
                 <FieldGeneric
-                title="Detalle"
-                type="number"
-                name="detalle"
-                id="detalle"
+                title="Total a pagar"
+                type="text"
+                name="total_pagar"
+                id="total_pagar"
                 onChange={() => {}}
                 onBlur={() => {}}
-                placeholder="Detalle"
+                placeholder="Total a pagar"
                 />
+
+                <FieldGeneric
+                title="Interés"
+                type="number"
+                name="interes"
+                id="interes"
+                onChange={() => {}}
+                onBlur={() => {}}
+                placeholder="Interés"
+                />
+
+                <FieldGeneric
+                title="Observaciones"
+                type="text"
+                name="observaciones"
+                id="observaciones"
+                onChange={() => {}}
+                onBlur={() => {}}
+                placeholder="Observaciones"
+                />
+
             </FieldsContainerForm>
             <BtnContainerForm>
                 <BtnSubmit
@@ -101,4 +123,4 @@ const FormFees = () => {
     )
 }
 
-export default FormFees;
+export default FormBankLoans;
