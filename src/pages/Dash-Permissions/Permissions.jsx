@@ -3,6 +3,7 @@ import ContainerSections from "../../components/ContainerSections/ContainerSecti
 import FormGeneric from "../../components/FormGeneric/FormGeneric";
 import Table from "../../components/Table/Table";
 import React from 'react';
+import AuthLayout from "../../components/AuthLayout";
 
 
 const Permissions = () => {
@@ -25,12 +26,14 @@ const Permissions = () => {
     );
 
     return (
-        <ContainerSections>
-            <TitleSection text="Permisos de usuario" ubication="left"/>
-            <FormGeneric>
-                <Table columns={columns} data={data} />
-            </FormGeneric>
-        </ContainerSections>
+        <AuthLayout authentication={true} roles={[]}>
+            <ContainerSections>
+                <TitleSection text="Permisos de usuario" ubication="left"/>
+                <FormGeneric>
+                    <Table columns={columns} data={data} />
+                </FormGeneric>
+            </ContainerSections>
+        </AuthLayout>
     )
 }
 

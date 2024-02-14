@@ -4,6 +4,7 @@ import HeaderSection from "../../components/HeaderSection/HeaderSection";
 import { changeToView } from "../../store/formRegistrySlice";
 import { useEffect } from "react";
 import FormPurchaseOfMerchandise from "./FormPurchaseOfMerchandise/FormPurchaseOfMerchandise";
+import AuthLayout from "../../components/AuthLayout";
 
 const PurchaseOfMerchandise = () => {
 
@@ -16,20 +17,22 @@ const PurchaseOfMerchandise = () => {
     }, [])
 
     return (
-        <ContainerSections>
-            <HeaderSection
-            text="Compra de mercadería" 
-            btnTextPrimary="Añadir registro" 
-            btnTextSecondary="Ver todos los registros"
-            />
-            {
-                isViewMode ? (
-                    <>Acá estará la tabla para visualizar todos los datos</>
-                ) : (
-                    <FormPurchaseOfMerchandise/>
-                )
-            }
-        </ContainerSections>
+        <AuthLayout authentication={true} roles={[]}>
+            <ContainerSections>
+                <HeaderSection
+                text="Compra de mercadería" 
+                btnTextPrimary="Añadir registro" 
+                btnTextSecondary="Ver todos los registros"
+                />
+                {
+                    isViewMode ? (
+                        <>Acá estará la tabla para visualizar todos los datos</>
+                    ) : (
+                        <FormPurchaseOfMerchandise/>
+                    )
+                }
+            </ContainerSections>
+        </AuthLayout>
     )
 }
 
