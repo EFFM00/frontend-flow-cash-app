@@ -3,7 +3,7 @@ import ContainerSections from "../../components/ContainerSections/ContainerSecti
 import FormGeneric from "../../components/FormGeneric/FormGeneric";
 import React from 'react';
 import AuthLayout from "../../components/AuthLayout";
-import Table from "../../components/Table/Table";
+import TableExample from "../../components/Table/Table";
 
 
 const Permissions = () => {
@@ -12,7 +12,7 @@ const Permissions = () => {
         <AuthLayout authentication={false} roles={[]}>
             <ContainerSections>
                 <TitleSection text="Permisos de usuario" ubication="left"/>
-                <Table/>
+                <TableExample/>
 
                 {/* <Table columns={columns} data={data} /> */}
             </ContainerSections>
