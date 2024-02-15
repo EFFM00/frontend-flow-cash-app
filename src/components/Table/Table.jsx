@@ -1,41 +1,20 @@
-import React from 'react';
-import { useTable } from 'react-table';
+import Tr from "./Tr/Tr";
 
-const Table = ({ columns, data }) => {
-  const {
-    rows,
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
-  return (
-    <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>|
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => (
-                <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-              ))}
+const Table = ({headers=["Nombre", "Contacto", "Empresa", "Acciones"]}, body={}) => {
+    return (
+    <table>
+        <thead>
+            <tr>
+                {
+                    headers.map(h => <th>{h}</th>)
+                }
             </tr>
-          );
-        })}
-      </tbody>
+        </thead>
+        <tbody>
+            <Tr/>
+        </tbody>
     </table>
-  );
+    )
 };
 export default Table;
+    
