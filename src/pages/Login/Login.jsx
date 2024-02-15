@@ -8,6 +8,9 @@ import { FieldGroup, FormContainer, LoginForm, PageForm } from "./styled";
 import TitleSection from "../../components/TitleSection/TitleSection";
 import LinkText from "../../components/LinkText/LinkText";
 import AuthLayout from "../../components/AuthLayout";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { loginUser } from "../../service/authService";
 
 const Login = () => {
 
@@ -44,6 +47,12 @@ const Login = () => {
             })
         }
     })
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(loginUser({}))
+    }, [])
 
 
     return(
