@@ -1,13 +1,13 @@
 import React from "react";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
-import "react-super-responsive-table/dist/ResponsiveTable.css";
+import "../../ResponsiveTable.css";
 
 export default function TableExample() {
   return (
     <Table>
       <Thead>
         <Tr>
-          <Th>Abo</Th>
+          <Th>A</Th>
           <Th>PG 1</Th>
           <Th>PG 2</Th>
           <Th>PG 3</Th>

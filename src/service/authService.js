@@ -3,19 +3,18 @@ import axios from "axios";
 
 export const loginUser = createAsyncThunk("auth/loginUser", async (userData) => {
     try {
-        console.log("LLEGAACA");
-        const url = import.meta.env.REACT_APP_API_URL_BASE
-
-        const test = {
-            "email": "andres@mail.com",
-            "password": "12345"
+        const url = import.meta.env.VITE_REACT_APP_API_URL_BASE
+        
+        const params = {
+            "email": userData.email,
+            "password": userData.password
         }
 
-        const response = await axios.post("https://rv9w53hl17.execute-api.sa-east-1.amazonaws.com/Prod/login", test);
-        console.log("Response", response);
+        const response = await axios.post(`${url}/Prod/login` , params);
         return response.data;
+
     } catch (error) {
         console.log(error);
-      throw error.response.data; // Captura el error y lo pasa al estado rechazado
+        throw error.response.data; // Captura el error y lo pasa al estado rechazado
     }
 });

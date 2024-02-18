@@ -14,6 +14,8 @@ import { loginUser } from "../../service/authService";
 
 const Login = () => {
 
+    const dispatch = useDispatch();
+
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -29,15 +31,7 @@ const Login = () => {
             .required("La contraseña es requerida")
         }),
         onSubmit: async (values) => {
-            const url = "#";
-
-            const headers = {
-                headers: {
-                    "Content-type": "application/json",
-                }
-            }
-        
-            axios.post(url, values, headers)
+            dispatch(loginUser(values))
             .then(res => {
                 console.log(res);
             })
@@ -48,18 +42,11 @@ const Login = () => {
         }
     })
 
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(loginUser({}))
-    }, [])
-
-
     return(
         <AuthLayout authentication={false}>
             <PageForm>
                 <FormContainer>
-                    <LoginForm>
+                    <LoginForm onSubmit={formik.handleSubmit}>
                         <TitleSection ubication={"center"} text={"Login"}/>
                         <FieldGroup>
                             <FieldGeneric 
