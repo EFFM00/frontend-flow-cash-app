@@ -1,9 +1,9 @@
 import FieldGeneric from "../FieldGeneric/FieldGeneric";
+import ShowPwd from "../../assets/eye-solid.svg";
+import HiddenPwd from "../../assets/eye-slash-solid.svg";
+import { BtnEye, ContainerFieldPassword, FieldStyle, Img } from "./styled";
 import InputGeneric from "../InputGeneric/InputGeneric";
 import Label from "../Label/Label";
-import { ShowPwd } from "../../assets/eye-solid.svg"
-import { HiddenPwd } from "../../assets/eye-slash-solid.svg"
-import { BtnEye, ContainerFieldPassword, FieldStyle } from "./styled";
 
 const FieldPassword = ({
     title,
@@ -13,25 +13,27 @@ const FieldPassword = ({
     onBlur,
     placeholder,
     conditionalType,
-    onClickEye
+    onClickEye,
 }) => {
     return (
-        <ContainerFieldPassword>
-            <FieldGeneric
-                title={title}
-                type={conditionalType ? "text" : "password"}
-                name={name}
-                id={id}
-                onChange={onChange}
-                onBlur={onBlur}
-                placeholder={placeholder}
-            />
-            <BtnEye type="button" onClick={onClickEye}>
-                { conditionalType ? HiddenPwd : ShowPwd }
-            </BtnEye>
-        </ContainerFieldPassword>
+        <FieldStyle>
+            <Label title={title} textFor={id}/>
+            <ContainerFieldPassword>
+                <InputGeneric
+                    type={conditionalType ? "text" : "password"}
+                    name={name}
+                    id={id}
+                    onChange={onChange}
+                    onBlur={onBlur}
+                    placeholder={placeholder}
+                />
+
+                <BtnEye type="button" onClick={onClickEye} title={conditionalType ? "Ocultar contraseña" : "Mostrar contraseña"}>
+                    <Img src={conditionalType ? HiddenPwd : ShowPwd} />
+                </BtnEye>
+            </ContainerFieldPassword>
+        </FieldStyle>
     );
 };
 
 export default FieldPassword;
-

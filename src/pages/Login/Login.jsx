@@ -79,6 +79,8 @@ const Login = () => {
                             onChange={formik.handleChange} 
                             onBlur={formik.handleBlur} 
                             placeholder="Contraseña"
+                            conditionalType={showPassword}
+                            onClickEye={togglePasswordVisibility}
                             />
                             
                             {/* <FieldGeneric 

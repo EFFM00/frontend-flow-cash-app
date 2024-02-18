@@ -12,9 +12,17 @@ export const BtnEye = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: none;
+    background-color: transparent;
     border: none;
+    margin: 0 0.5rem;
+    cursor: pointer;
 `;
 export const ContainerFieldPassword = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
 `;
+
+export const Img = styled.img`
+    width: 2rem;
+`
