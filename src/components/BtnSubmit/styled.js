@@ -27,4 +27,9 @@ export const Btn = styled.button`
     &:active {
         background-color: #51647a;
     }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: #e0e0e0;
+    }
 `

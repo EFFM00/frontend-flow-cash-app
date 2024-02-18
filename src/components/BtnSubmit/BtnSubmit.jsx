@@ -1,6 +1,6 @@
 import { Btn } from "./styled";
 
-const BtnSubmit = ({text, type, onClick, color, colorText, ubication}) => {
+const BtnSubmit = ({disabled=false, text, type, onClick, color, colorText, ubication}) => {
     return (
         <Btn 
         type={type} 
@@ -10,6 +10,7 @@ const BtnSubmit = ({text, type, onClick, color, colorText, ubication}) => {
         $ubication={ubication}
         aria-label={text}
         title={text}
+        disabled={disabled}
         >{text}</Btn>
     );
 }

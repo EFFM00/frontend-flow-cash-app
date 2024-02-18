@@ -9,12 +9,19 @@ import TitleSection from "../../components/TitleSection/TitleSection";
 import LinkText from "../../components/LinkText/LinkText";
 import AuthLayout from "../../components/AuthLayout";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { loginUser } from "../../service/authService";
+import FieldPassword from "../../components/FieldPassword/FieldPassword";
 
 const Login = () => {
 
     const dispatch = useDispatch();
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const formik = useFormik({
         initialValues: {
@@ -65,14 +72,25 @@ const Login = () => {
                         </FieldGroup>
 
                         <FieldGroup>
-                            <FieldGeneric 
-                            title="Contraseña" 
-                            type="password"
+                            <FieldPassword
+                            title="Contraseña"
                             name="password"
                             id="password" 
                             onChange={formik.handleChange} 
                             onBlur={formik.handleBlur} 
-                            placeholder="Contraseña"/>
+                            placeholder="Contraseña"
+                            />
+                            
+                            {/* <FieldGeneric 
+                            title="Contraseña" 
+                            type={showPassword ? 'text' : 'password'}
+                            // type="password"
+                            name="password"
+                            id="password" 
+                            onChange={formik.handleChange} 
+                            onBlur={formik.handleBlur} 
+                            placeholder="Contraseña"/> */}
+
                             {
                                 formik.touched.password && formik.errors.password && (
                                     <SpanError text={formik.errors.password}/>
@@ -82,7 +100,7 @@ const Login = () => {
 
                         <LinkText text="¿No tienes cuenta? Créala acá" path="/register" ubication="left"/>
 
-                        <BtnSubmit type="submit" text="Iniciar sesión" onClick={() => {}} color="#59d999" colorText={"black"} ubication="center"/>
+                        <BtnSubmit type="submit" text="Iniciar sesión" disabled={!formik.isValid} color="#59d999" colorText={"black"} ubication="center"/>
                     </LoginForm>
                 </FormContainer>
             </PageForm>
