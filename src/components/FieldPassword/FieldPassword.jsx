@@ -14,6 +14,7 @@ const FieldPassword = ({
     placeholder,
     conditionalType,
     onClickEye,
+    value
 }) => {
     return (
         <FieldStyle>
@@ -26,6 +27,7 @@ const FieldPassword = ({
                     onChange={onChange}
                     onBlur={onBlur}
                     placeholder={placeholder}
+                    value={value}
                 />
 
                 <BtnEye type="button" onClick={onClickEye} title={conditionalType ? "Ocultar contraseña" : "Mostrar contraseña"}>
