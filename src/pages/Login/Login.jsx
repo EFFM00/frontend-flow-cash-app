@@ -98,7 +98,7 @@ const Login = () => {
                             onChange={formik.handleChange} 
                             onBlur={formik.handleBlur} 
                             placeholder="Email"
-                            value={cookies.email}
+                            value={cookies.email ?? formik.values.email}
                             />
                             {
                                 formik.touched.email && formik.errors.email && (
@@ -117,7 +117,7 @@ const Login = () => {
                             placeholder="Contraseña"
                             conditionalType={showPassword}
                             onClickEye={togglePasswordVisibility}
-                            value={cookies.password}
+                            value={cookies.password ?? formik.values.password}
                             />
 
                             {

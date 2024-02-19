@@ -14,7 +14,7 @@ export const BtnEye = styled.button`
     align-items: center;
     background-color: transparent;
     border: none;
-    margin: 0 0.5rem;
+    margin: 0 0 0 0.5rem;
     cursor: pointer;
 `;
 export const ContainerFieldPassword = styled.div`
