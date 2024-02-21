@@ -14,7 +14,6 @@ import { useEffect, useState } from "react";
 import { loginUser } from "../../service/authService";
 import FieldPassword from "../../components/FieldPassword/FieldPassword";
 import CheckRememberPwd from "../../components/CheckRememberPwd/CheckRememberPwd";
-import { finishedLoadingLogin, startLoadingLogin } from "../../store/loadingSlice";
 
 const Login = () => {
 
@@ -24,12 +23,7 @@ const Login = () => {
     const [rememberPassword, setRememberPassword] = useState(false);
     const [cookies, setCookie] = useCookies(['user']);
 
-    const loadingLogin = useSelector((state) => state.loading.loginLoading)
-
-    useEffect(() => {
-      console.log("loadingLogin", loadingLogin);
-    }, [loadingLogin])
-    
+    const loadingStatus = useSelector((state) => state.auth.status)
 
     const toggleRememberPwd = () => {
         setRememberPassword(!rememberPassword)
@@ -79,19 +73,16 @@ const Login = () => {
 
             const {email, password} = values;
 
-            dispatch(startLoadingLogin());
-
             rememberPassword && savePasswordCookie(email, password);
 
             dispatch(loginUser(values))
+
             .then(res => {
                 console.log(res);
-                dispatch(finishedLoadingLogin());
             })
         
             .catch(err => {
                 console.log(err);
-                dispatch(finishedLoadingLogin());
             })
         }
     })
@@ -111,7 +102,7 @@ const Login = () => {
                             onChange={formik.handleChange} 
                             onBlur={formik.handleBlur} 
                             placeholder="Email"
-                            value={cookies.email ?? formik.values.email}
+                            value={formik.values.email}
                             />
                             {
                                 formik.touched.email && formik.errors.email && (
@@ -130,7 +121,7 @@ const Login = () => {
                             placeholder="Contraseña"
                             conditionalType={showPassword}
                             onClickEye={togglePasswordVisibility}
-                            value={cookies.password ?? formik.values.password}
+                            value={formik.values.password}
                             />
 
                             {
