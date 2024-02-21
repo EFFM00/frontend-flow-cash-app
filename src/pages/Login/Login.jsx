@@ -18,10 +18,13 @@ import Spinner from "../../components/Spinner/Spinner";
 import SpinnerSvg from "../../assets/spinner3.svg"
 import { FAILED, PENDING, SUCCEEDED } from "../../constants/status";
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
     const dispatch = useDispatch();
+
+    const navigate = useNavigate();
 
     const [showPassword, setShowPassword] = useState(false);
     const [rememberPassword, setRememberPassword] = useState(false);
@@ -113,6 +116,7 @@ const Login = () => {
             dispatch(loginUser(values))
 
             .then(res => {
+                res.payload.token && navigate("/dashboard")
                 console.log("RESULT", res);
             })
         
