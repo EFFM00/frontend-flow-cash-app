@@ -14,6 +14,10 @@ import { useEffect, useState } from "react";
 import { loginUser } from "../../service/authService";
 import FieldPassword from "../../components/FieldPassword/FieldPassword";
 import CheckRememberPwd from "../../components/CheckRememberPwd/CheckRememberPwd";
+import Spinner from "../../components/Spinner/Spinner";
+import SpinnerSvg from "../../assets/spinner3.svg"
+import { FAILED, PENDING, SUCCEEDED } from "../../constants/status";
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
@@ -23,7 +27,8 @@ const Login = () => {
     const [rememberPassword, setRememberPassword] = useState(false);
     const [cookies, setCookie] = useCookies(['user']);
 
-    const loadingStatus = useSelector((state) => state.auth.status)
+    const loginStatus = useSelector((state) => state.auth.status)
+    const loginStatusAll = useSelector((state) => state.auth)
 
     const toggleRememberPwd = () => {
         setRememberPassword(!rememberPassword)
@@ -53,6 +58,36 @@ const Login = () => {
     useEffect(() => {
         markCheckIfRememberTrue()
     }, [cookies])
+
+    useEffect(() => {
+        if (loginStatus === FAILED) {
+            toast.error('Credenciales incorrectas', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: "Bounce",
+            });
+        }
+
+        if (loginStatus === SUCCEEDED) {
+            toast.success('Sesión iniciada con éxito', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: "Bounce",
+            });
+        }
+    }, [loginStatus]);
     
 
     const formik = useFormik({
@@ -78,7 +113,7 @@ const Login = () => {
             dispatch(loginUser(values))
 
             .then(res => {
-                console.log(res);
+                console.log("RESULT", res);
             })
         
             .catch(err => {
@@ -134,8 +169,17 @@ const Login = () => {
                         <CheckRememberPwd value={rememberPassword} onClick={toggleRememberPwd} title="Recordar contraseña" checked={rememberPassword}/>
 
                         <LinkText text="¿No tienes cuenta? Créala acá" path="/register" ubication="left"/>
-
-                        <BtnSubmit type="submit" text="Iniciar sesión" disabled={!formik.isValid} color="#59d999" colorText={"black"} ubication="center"/>
+                        
+                        <BtnSubmit 
+                        type="submit" 
+                        text={
+                            loginStatus === PENDING 
+                            ? <Spinner image={SpinnerSvg} text="Iniciando sesión..."/>
+                            : "Iniciar sesión"} 
+                        disabled={!formik.isValid || loginStatus === PENDING} 
+                        color="#59d999" 
+                        colorText={"black"} 
+                        ubication="center"/>
                     </LoginForm>
                 </FormContainer>
             </PageForm>
