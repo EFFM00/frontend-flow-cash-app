@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import { useSelector } from "react-redux";
 import * as Yup from "yup";
 import FieldGeneric from "../../components/FieldGeneric/FieldGeneric";
 import { useCookies } from 'react-cookie';
@@ -13,6 +14,7 @@ import { useEffect, useState } from "react";
 import { loginUser } from "../../service/authService";
 import FieldPassword from "../../components/FieldPassword/FieldPassword";
 import CheckRememberPwd from "../../components/CheckRememberPwd/CheckRememberPwd";
+import { finishedLoadingLogin, startLoadingLogin } from "../../store/loadingSlice";
 
 const Login = () => {
 
@@ -21,6 +23,13 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [rememberPassword, setRememberPassword] = useState(false);
     const [cookies, setCookie] = useCookies(['user']);
+
+    const loadingLogin = useSelector((state) => state.loading.loginLoading)
+
+    useEffect(() => {
+      console.log("loadingLogin", loadingLogin);
+    }, [loadingLogin])
+    
 
     const toggleRememberPwd = () => {
         setRememberPassword(!rememberPassword)
@@ -68,17 +77,21 @@ const Login = () => {
         }),
         onSubmit: async (values) => {
 
-            const {email, password} = values
+            const {email, password} = values;
+
+            dispatch(startLoadingLogin());
 
             rememberPassword && savePasswordCookie(email, password);
 
             dispatch(loginUser(values))
             .then(res => {
                 console.log(res);
+                dispatch(finishedLoadingLogin());
             })
         
             .catch(err => {
                 console.log(err);
+                dispatch(finishedLoadingLogin());
             })
         }
     })
