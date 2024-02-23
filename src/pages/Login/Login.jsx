@@ -59,6 +59,12 @@ const Login = () => {
     }
 
     useEffect(() => {
+        console.log("loginStatus === PENDING", loginStatus === PENDING);
+        console.log("formik.isValid", formik.isValid);
+        
+    }, [])
+
+    useEffect(() => {
         markCheckIfRememberTrue()
     }, [cookies])
 
@@ -91,6 +97,10 @@ const Login = () => {
             });
         }
     }, [loginStatus]);
+
+    const disableBtnLogin = () => {
+        return !formik.isValid || loginStatus === PENDING || !formik.values.email || !formik.values.password
+    }
     
 
     const formik = useFormik({
@@ -180,7 +190,7 @@ const Login = () => {
                             loginStatus === PENDING 
                             ? <Spinner image={SpinnerSvg} text="Iniciando sesión..."/>
                             : "Iniciar sesión"} 
-                        disabled={!formik.isValid || loginStatus === PENDING} 
+                        disabled={disableBtnLogin()} 
                         color="#59d999" 
                         colorText={"black"} 
                         ubication="center"/>
