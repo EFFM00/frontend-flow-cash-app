@@ -17,7 +17,8 @@ import CheckRememberPwd from "../../components/CheckRememberPwd/CheckRememberPwd
 import Spinner from "../../components/Spinner/Spinner";
 import SpinnerSvg from "../../assets/spinner3.svg"
 import { FAILED, PENDING, SUCCEEDED } from "../../constants/status";
-import { toast } from 'react-toastify';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -25,6 +26,7 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
+    const authStatus = useSelector((state) => state.auth.status);
 
     const [showPassword, setShowPassword] = useState(false);
     const [rememberPassword, setRememberPassword] = useState(false);
@@ -79,7 +81,7 @@ const Login = () => {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-                transition: "Bounce",
+                transition: Bounce,
             });
         }
 
@@ -93,7 +95,7 @@ const Login = () => {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-                transition: "Bounce",
+                transition: Bounce,
             });
         }
     }, [loginStatus]);
@@ -126,11 +128,13 @@ const Login = () => {
             dispatch(loginUser(values))
 
             .then(res => {
-                res.payload.token && navigate("/dashboard")
+                console.log("Entra a then", authStatus);
+                // res.payload.token && navigate("/dashboard")
                 console.log("RESULT", res);
             })
         
             .catch(err => {
+                console.log("Entra a catch");
                 console.log(err);
             })
         }
@@ -183,7 +187,6 @@ const Login = () => {
                         <CheckRememberPwd value={rememberPassword} onClick={toggleRememberPwd} title="Recordar contraseña" checked={rememberPassword}/>
 
                         <LinkText text="¿No tienes cuenta? Créala acá" path="/register" ubication="left"/>
-                        
                         <BtnSubmit 
                         type="submit" 
                         text={
