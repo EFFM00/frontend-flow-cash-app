@@ -1,6 +1,6 @@
 import { Input } from "./styled";
 
-const InputGeneric = ({ type, name, id, onChange, onBlur, placeholder }) => {
+const InputGeneric = ({ type, name, id, onChange, onBlur, placeholder, value }) => {
     return <Input 
     type={type}
     placeholder={placeholder}
@@ -8,6 +8,7 @@ const InputGeneric = ({ type, name, id, onChange, onBlur, placeholder }) => {
     id={id} 
     onChange={onChange}
     onBlur={onBlur}
+    value={value}
     />;
 };
 

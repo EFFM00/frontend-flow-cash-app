@@ -7,8 +7,8 @@ const store = configureStore({
     reducer: {
         auth: authSlice,
         menu: menuSlice,
-        formRegistry: formRegistrySlice
+        formRegistry: formRegistrySlice,
     }
-})
+});
 
 export default store;

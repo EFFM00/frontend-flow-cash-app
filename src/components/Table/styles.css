@@ -1,9 +1,0 @@
-.custom-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.custom-table the,
-.custom-table td {
-  padding: 8px;
-  border: 1px solid #ddd;
-}

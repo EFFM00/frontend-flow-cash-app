@@ -3,6 +3,7 @@ import ContainerSections from "../../components/ContainerSections/ContainerSecti
 import HeaderSection from "../../components/HeaderSection/HeaderSection";
 import { changeToView } from "../../store/formRegistrySlice";
 import { useEffect } from "react";
+import AuthLayout from "../../components/AuthLayout";
 
 const CashFlow = () => {
 
@@ -13,13 +14,15 @@ const CashFlow = () => {
     }, [])
 
     return (
-        <ContainerSections>
-            <HeaderSection
-            text="Flujo de caja" 
-            btnTextPrimary="Añadir registro" 
-            btnTextSecondary="Ver todos los registros"
-            />
-        </ContainerSections>
+        <AuthLayout authentication={true} roles={[]}>
+            <ContainerSections>
+                <HeaderSection
+                text="Flujo de caja" 
+                btnTextPrimary="Añadir registro" 
+                btnTextSecondary="Ver todos los registros"
+                />
+            </ContainerSections>
+        </AuthLayout>
     )
 }
 

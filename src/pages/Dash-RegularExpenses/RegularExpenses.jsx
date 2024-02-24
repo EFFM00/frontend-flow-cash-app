@@ -4,6 +4,7 @@ import HeaderSection from "../../components/HeaderSection/HeaderSection";
 import { changeToView } from "../../store/formRegistrySlice";
 import { useEffect } from "react";
 import FormRegularExpenses from "./FormRegularExpenses/FormRegularExpenses";
+import AuthLayout from "../../components/AuthLayout";
 
 const RegularExpenses = () => {
 
@@ -16,20 +17,22 @@ const RegularExpenses = () => {
     }, [])
 
     return (
-        <ContainerSections>
-            <HeaderSection
-            text="Gastos recurrentes" 
-            btnTextPrimary="Añadir registro" 
-            btnTextSecondary="Ver todos los registros"
-            />
-            {
-                isViewMode ? (
-                    <>Acá estará la tabla para visualizar todos los datos</>
-                ) : (
-                    <FormRegularExpenses/>
-                )
-            }
-        </ContainerSections>
+        <AuthLayout authentication={true} roles={[]}>
+            <ContainerSections>
+                <HeaderSection
+                text="Gastos recurrentes" 
+                btnTextPrimary="Añadir registro" 
+                btnTextSecondary="Ver todos los registros"
+                />
+                {
+                    isViewMode ? (
+                        <>Acá estará la tabla para visualizar todos los datos</>
+                    ) : (
+                        <FormRegularExpenses/>
+                    )
+                }
+            </ContainerSections>
+        </AuthLayout>
     )
 }
 

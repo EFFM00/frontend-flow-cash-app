@@ -4,6 +4,7 @@ import HeaderSection from "../../components/HeaderSection/HeaderSection";
 import { changeToView } from "../../store/formRegistrySlice";
 import { useEffect } from "react";
 import FormRemunerations from "./FormRemunerations/FormRemunerations";
+import AuthLayout from "../../components/AuthLayout";
 
 const Remunerations = () => {
 
@@ -16,20 +17,22 @@ const Remunerations = () => {
     }, [])
 
     return (
-        <ContainerSections>
-            <HeaderSection
-            text="Remuneraciones" 
-            btnTextPrimary="Añadir registro" 
-            btnTextSecondary="Ver todos los registros"
-            />
-            {
-                isViewMode ? (
-                    <>Acá estará la tabla para visualizar todos los datos</>
-                ) : (
-                    <FormRemunerations/>
-                )
-            }
-        </ContainerSections>
+        <AuthLayout authentication={true} roles={[]}>
+            <ContainerSections>
+                <HeaderSection
+                text="Remuneraciones" 
+                btnTextPrimary="Añadir registro" 
+                btnTextSecondary="Ver todos los registros"
+                />
+                {
+                    isViewMode ? (
+                        <>Acá estará la tabla para visualizar todos los datos</>
+                    ) : (
+                        <FormRemunerations/>
+                    )
+                }
+            </ContainerSections>
+        </AuthLayout>
     )
 }
 

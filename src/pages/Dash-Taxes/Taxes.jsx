@@ -3,6 +3,7 @@ import ContainerSections from "../../components/ContainerSections/ContainerSecti
 import HeaderSection from "../../components/HeaderSection/HeaderSection";
 import { useEffect } from "react";
 import { changeToView } from "../../store/formRegistrySlice";
+import AuthLayout from "../../components/AuthLayout";
 
 const Taxes = () => {
 
@@ -13,13 +14,15 @@ const Taxes = () => {
     }, [])
 
     return (
-        <ContainerSections>
-            <HeaderSection
-            text="Impuestos" 
-            btnTextPrimary="Añadir registro" 
-            btnTextSecondary="Ver todos los registros"
-            />
-        </ContainerSections>
+        <AuthLayout authentication={true} roles={[]}>
+            <ContainerSections>
+                <HeaderSection
+                text="Impuestos" 
+                btnTextPrimary="Añadir registro" 
+                btnTextSecondary="Ver todos los registros"
+                />
+            </ContainerSections>
+        </AuthLayout>
     )
 }
 
